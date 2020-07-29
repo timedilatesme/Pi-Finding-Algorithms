@@ -1,6 +1,5 @@
 from manimlib.imports import*
 import random
-from playsound import playsound
 
 
 # DRIVER CODE
@@ -38,11 +37,12 @@ class pifind(Scene):
 			point = self.get_random_point()
 
 			if (self.magnitude(point) <= 3):
-				#playsound('D:/MANIM/manim-master/fun_projects/dart_hit.mp3')
+				self.add_sound("./dart_hit.wav")
 				self.add(dot.shift(point).set_color(RED))
 				isins += 1
 
 			else:
+				self.add_sound("./dart_hit.wav")
 				self.add(dot.shift(point).set_color(GREEN))
 				isout += 1 
 
